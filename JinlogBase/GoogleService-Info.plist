@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>811030118948-bua7aets8tpfvehatgi5i4ln795mrbmq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.811030118948-bua7aets8tpfvehatgi5i4ln795mrbmq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0cnfWRlLqi5G84vv3pq2gkCqgt5WtrMs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>811030118948</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>sample.JinlgBase20220928</string>
+	<key>PROJECT_ID</key>
+	<string>project-jinlog</string>
+	<key>STORAGE_BUCKET</key>
+	<string>project-jinlog.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:811030118948:ios:fff4f713b030c718d98eb1</string>
+</dict>
+</plist>
