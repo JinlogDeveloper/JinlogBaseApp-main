@@ -48,7 +48,10 @@ struct GameView: View {
 struct GameViewTop: View {
     @ObservedObject var gm: GameMaster
     
+    @ObservedObject var viewModel = ScannerViewModel()
+    
     @State private var inputGameId = ""
+    
     
     var body: some View {
         VStack{
@@ -64,11 +67,35 @@ struct GameViewTop: View {
             }.padding()
             
             VStack {
-                TextFieldRow(
-                    fieldText: $inputGameId, 
-                    iconName: "person.badge.plus", 
-                    text: "Game ID"
-                )
+//                TextFieldRow(
+//                    fieldText: $inputGameId,
+//                    iconName: "person.badge.plus",
+//                    text: "Game ID"
+//                )
+                
+                HStack{
+                               Button(action:{
+                                  print("QRcordを読み取るカメラ起動")
+                                   viewModel.isShowing = true
+                              
+                               },label:{
+                                   Image(systemName: "person.badge.plus")
+                                       .resizable()
+                                       .scaledToFit()
+                                       .frame(width: 25.0, height: 25.0)
+                                   
+                               })
+
+                               TextField("Game ID",text: $inputGameId)
+                           }
+                           .padding(12.0)
+                               .frame(maxWidth: 400)
+                               .clipShape(RoundedRectangle(cornerRadius: 30))
+                               .shadow(radius: 3)
+                               .padding(.horizontal, 20.0)
+                               
+                
+                
                 
                 Button("ゲームに参加する") {
                     Task {
@@ -80,10 +107,25 @@ struct GameViewTop: View {
                         }
                     }
                 }
+                
+                
+                
+                .fullScreenCover(isPresented: $viewModel.isShowing) {
+                  SecondView(viewModel: viewModel)
+                    
+                }
+                
+                
             }.padding()
             
+        }.onChange(of: viewModel.lastQrCode){ newValue in
+            inputGameId = newValue
         }
+        
+        
     }
+    
+
 }
 
 struct GameViewRecruitPlayers: View {
