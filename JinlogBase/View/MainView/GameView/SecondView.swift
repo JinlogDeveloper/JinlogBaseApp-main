@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+// ★構造体名・クラス名は、できるだけ意味の分かる名詞にする
 struct SecondView: View {
     
+    // ★名前が抽象的すぎる！
     @ObservedObject var viewModel : ScannerViewModel
     
     
     var body: some View {
         Text("SecondView")
         
+        // ★インデントがずれてる！
        ZStack {
             // QRコード読み取りView
             QrCodeScannerView()

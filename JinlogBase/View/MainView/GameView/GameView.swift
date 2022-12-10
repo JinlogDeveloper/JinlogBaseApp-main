@@ -48,6 +48,7 @@ struct GameView: View {
 struct GameViewTop: View {
     @ObservedObject var gm: GameMaster
     
+    // ★名前が抽象的すぎる！
     @ObservedObject var viewModel = ScannerViewModel()
     
     @State private var inputGameId = ""
@@ -67,6 +68,8 @@ struct GameViewTop: View {
             }.padding()
             
             VStack {
+                // ★改造前のコードはgithubの過去バージョンで見れるため
+                // ★削除してしまってOK！
 //                TextFieldRow(
 //                    fieldText: $inputGameId,
 //                    iconName: "person.badge.plus",
@@ -74,6 +77,7 @@ struct GameViewTop: View {
 //                )
                 
                 HStack{
+                    // ★インデントがずれてる！
                                Button(action:{
                                   print("QRcordを読み取るカメラ起動")
                                    viewModel.isShowing = true
@@ -111,6 +115,7 @@ struct GameViewTop: View {
                 
                 
                 .fullScreenCover(isPresented: $viewModel.isShowing) {
+                    // ★インデントがずれてる！
                   SecondView(viewModel: viewModel)
                     
                 }
